@@ -1,31 +1,34 @@
-import java.io.*;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 import java.util.Arrays;
-
-
+import java.util.StringTokenizer;
 
 public class Main {
+
 
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int n = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(br.readLine());
 
-        int[] arrays = new int[n];
+        int[] arr = new int[N];
 
-        for (int i = 0; i < arrays.length; i++) {
-            arrays[i] = Integer.parseInt(br.readLine());
-        }
-        br.close();
-
-        Arrays.sort(arrays);
-
-        for (int i = 0; i < arrays.length; i++) {
-            bw.write(arrays[i] + "\n");
+        for (int i = 0; i < N; i++) {
+            arr[i] = Integer.parseInt(br.readLine());
         }
 
-        bw.flush();
-        bw.close();
+        Arrays.sort(arr);
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < N; i++) {
+            sb.append(arr[i]).append("\n");
+        }
+
+        System.out.println(sb);
+        
     }
 }
+
