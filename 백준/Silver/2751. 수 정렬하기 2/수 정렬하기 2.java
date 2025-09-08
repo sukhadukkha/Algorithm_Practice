@@ -1,33 +1,32 @@
-
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.io.IOException;
+import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
 
+    public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(br.readLine());
 
-        List<Integer> arrList = new ArrayList<>();
+        int[] arr = new int[N];
 
         for (int i = 0; i < N; i++) {
-            arrList.add(Integer.parseInt(br.readLine()));
+            arr[i] = Integer.parseInt(br.readLine());
         }
 
-        Collections.sort(arrList);
+        Arrays.sort(arr);
 
-        for (int i : arrList) {
-            sb.append(i).append("\n");
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < N; i++) {
+            sb.append(arr[i]).append("\n");
         }
         System.out.println(sb);
-
+        
     }
 }
+
